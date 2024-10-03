@@ -17,9 +17,24 @@ BEGIN
     DECLARE @sumaOriginal DECIMAL(18, 2);
     DECLARE @sumaAsignada DECIMAL(18, 2);
     
-    -- Limpiar la tabla SaldosAsignados
+    -- Limpiar la tabla 
     DELETE FROM SaldosAsignados;
-    
+	DELETE FROM Gestores;
+
+    -- Insertar los Gestores
+	 INSERT INTO Gestores (GestorID,Nombre) 	VALUES 
+    (1,'gestor 1'),
+    (2,'gestor 2'),
+    (3,'gestor 3'),
+    (4,'gestor 4'),
+	(5,'gestor 5'),
+	(6,'gestor 6'),
+	(7,'gestor 7'),
+	(8,'gestor 8'),
+	(9,'gestor 9'),
+    (10,'gestor 10');
+   
+
     -- Insertar los saldos
     INSERT INTO @saldos (Saldo) VALUES 
         (2277), (3953), (4726), (1414), (627), (1784), (1634), (3958),
@@ -103,4 +118,6 @@ BEGIN
     SELECT * FROM SaldosAsignados;
    
 END
+
+--ejecucion de SP
 EXEC AsignarSaldos;
